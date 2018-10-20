@@ -29,8 +29,13 @@ def getAggregateKeyValue(urls):
                     if concept.key == i['name']:
                         concept.addToValue(float(i['value']))
                         counter = counter + 1
-    return listConcepts
+    sortedConcepts = sorted(listConcepts, key=lambda c: c.value, reverse=True)
+    return sortedConcepts
+
+def topThree(aggregateList):
+    return aggregateList[0].key + " " + aggregateList[1].key + " " + aggregateList[2].key
 
 if __name__ == "__main__":
     urls = {"https://scontent-ort2-1.cdninstagram.com/vp/0cce14df4cfe0ee40fe9c987bdf38fdd/5C5505D6/t51.2885-15/sh0.08/e35/s640x640/42068899_243218789687751_2248200095345990823_n.jpg","https://scontent-ort2-1.cdninstagram.com/vp/4d10d117923bbb3b2b68b7512cf681ba/5C5CB98C/t51.2885-15/e35/s480x480/43914177_2228428930701824_3145312509417136910_n.jpg", "https://scontent-ort2-1.cdninstagram.com/vp/982431eea19c52fec85c27ad7cafb348/5C66A636/t51.2885-15/sh0.08/e35/s640x640/43914177_2228428930701824_3145312509417136910_n.jpg"}
     aggregateList = getAggregateKeyValue(urls)
+    print(topThree(aggregateList))
