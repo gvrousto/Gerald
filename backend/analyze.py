@@ -24,7 +24,7 @@ def scrape_account (account_tag):
     for i in range(len(user_images)):
         user_images[i] = user_images[i]['node']['thumbnail_src']
 
-    return topFive(getAggregateKeyValue(user_images))
+    return topnum(getAggregateKeyValue(user_images), 10)
 
 class Concept:
     def __init__(self, key, value):
@@ -57,5 +57,10 @@ def getAggregateKeyValue(urls):
     sortedConcepts = sorted(listConcepts, key=lambda c: c.value, reverse=True)
     return sortedConcepts
 
-def topFive(aggregateList):
-    return aggregateList[0].key + " " + aggregateList[1].key + " " + aggregateList[2].key + " " + aggregateList[3].key + " " + aggregateList[4].key
+def topnum(aggregateList, num):
+    result = [];
+    for akey in aggregateList:
+        result.append(akey.key);
+        if len(result) >= num:
+            return result
+    return result

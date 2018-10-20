@@ -60,13 +60,11 @@ function search(username, url) {
           <img class="large-thumbnail" src="${url}">
           <br>
           <p>${res.body}</p>
+          <form action="https://www.instagram.com/${username}">
+            <input type="submit" value="Go to Profile" class="centered"/>
+          </form>
         </div>
       `
       search_results.innerHTML = results
   })
 }
-/*function updateSearch(e) {
-  console.log(e)
-  fetch('https://www.instagram.com/web/search/topsearch/?context=blended&query=' + e)
-  search_results = ""
-}*/
