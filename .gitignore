@@ -1,4 +1,6 @@
 server_config.py
 node_modules/
 config.js
+__pycache__/server_config.cpython-37.pyc
+backend/__pycache__/server_config.cpython-37.pyc
 backend/server_config.py
