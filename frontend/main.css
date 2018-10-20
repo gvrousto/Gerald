@@ -40,6 +40,12 @@ p {
   width: 35px;
   border-radius: 100%;
 }
+.large-thumbnail {
+  width: 80x;
+  border-radius: 100%;
+  margin: auto;
+  display: block;
+}
 .result {
   display: flex;
   align-items: center;

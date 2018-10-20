@@ -1,1 +1,4 @@
 server_config.py
+node_modules/
+config.js
+backend/server_config.py
